@@ -1,0 +1,16 @@
+---
+policy_objects:
+  address_groups:
+    - name: ATM_BCFS_Tandem_CED_SRC
+      subnets:
+        - "10.168.48.0/21"
+    - name: ATM_BCFS_Tandem_CED_DST
+      subnets:
+        - "156.55.109.150"
+        - "156.55.209.150"
+  applications:
+    - name: CS-ANSIBLE_APP
+      components:
+        - protocol: tcp
+          ports: ["2100", "2109", "2110"]
+
