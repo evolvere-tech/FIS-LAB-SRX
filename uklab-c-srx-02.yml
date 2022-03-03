@@ -1,5 +1,6 @@
 policy_objects:
   address_groups:
+  - name: MANUEL
   - name: NEW_ADDRESS_GROUP_7
     subnets:
     - 69.69.69/21
