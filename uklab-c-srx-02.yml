@@ -1,5 +1,8 @@
 policy_objects:
   address_groups:
+  - name: NEW_ADDRESS_GROUP_2
+    subnets:
+    - 69.69.69/21
   - name: NEW_ADDRESS_GROUP
     subnets:
     - 69.69.69/21
@@ -14,6 +17,13 @@ policy_objects:
     subnets:
     - 1.1.1.1
   applications:
+  - components:
+    - ports:
+      - '2100'
+      - '2109'
+      - '2110'
+      protocol: tcp
+    name: NEW_APPLICATION_2
   - components:
     - ports:
       - '2100'
