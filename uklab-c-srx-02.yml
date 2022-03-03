@@ -1,22 +1,35 @@
----
 policy_objects:
   address_groups:
-    - name: ATM_BCFS_Tandem_CED_SRC
-      subnets:
-        - "10.168.48.0/21"
-    - name: ATM_BCFS_Tandem_CED_DST
-      subnets:
-        - "156.55.109.150"
-        - "156.55.209.150"
-    - name: chg001
-      subnets:
-        - "1.1.1.1"
+  - name: NEW_ADDRESS_GROUP
+    subnets:
+    - 69.69.69/21
+  - name: ATM_BCFS_Tandem_CED_SRC
+    subnets:
+    - 10.168.48.0/21
+  - name: ATM_BCFS_Tandem_CED_DST
+    subnets:
+    - 156.55.109.150
+    - 156.55.209.150
+  - name: chg001
+    subnets:
+    - 1.1.1.1
   applications:
-    - name: CS-ANSIBLE_APP
-      components:
-        - protocol: tcp
-          ports: ["2100", "2109", "2110"]
-    - name: chg001
-      components:
-        - protocol: https
-          ports: ["443"]
+  - components:
+    - ports:
+      - '2100'
+      - '2109'
+      - '2110'
+      protocol: tcp
+    name: NEW_APPLICATION
+  - components:
+    - ports:
+      - '2100'
+      - '2109'
+      - '2110'
+      protocol: tcp
+    name: CS-ANSIBLE_APP
+  - components:
+    - ports:
+      - '443'
+      protocol: https
+    name: chg001
