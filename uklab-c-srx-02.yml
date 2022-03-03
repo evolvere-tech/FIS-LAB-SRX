@@ -1,5 +1,9 @@
 policy_objects:
   address_groups:
+  - name: NEW_ADDRESS_GROUP_9
+    subnets:
+    - 69.69.69/21
+  - name: MANUEL
   - name: NEW_ADDRESS_GROUP_7
     subnets:
     - 69.69.69/21
@@ -14,6 +18,13 @@ policy_objects:
     - 156.55.109.150
     - 156.55.209.150
   applications:
+  - components:
+    - ports:
+      - '2100'
+      - '2109'
+      - '2110'
+      protocol: tcp
+    name: NEW_APPLICATION_9
   - components:
     - ports:
       - '2100'
