@@ -1,17 +1,5 @@
 policy_objects:
   address_groups:
-  - name: ADDRESS_GROUP_2_SRC
-    subnets:
-    - 172.168.2.0/24
-  - name: ADDRESS_GROUP_2_DST
-    subnets:
-    - 172.169.2.0/24
-  - name: ADDRESS_GROUP_2_SRC
-    subnets:
-    - 172.168.2.0/24
-  - name: ADDRESS_GROUP_2_DST
-    subnets:
-    - 172.169.2.0/24
   - name: ADDRESS_GROUP_1_SRC
     subnets:
     - 172.168.1.0/24
@@ -25,26 +13,8 @@ policy_objects:
       - '2109'
       - '2110'
       protocol: tcp
-    name: APPLCATION_2
-  - components:
-    - ports:
-      - '2100'
-      - '2109'
-      - '2110'
-      protocol: tcp
-    name: APPLCATION_2
-  - components:
-    - ports:
-      - '2100'
-      - '2109'
-      - '2110'
-      protocol: tcp
     name: APPLICATION_1
   policy_map:
-  - application: APPLICATION_2
-    dst_address_group: ADDRESS_GROUP_2_DST
-    service_name: APPLICATION_2_SVC
-    src_address_group: ADDRESS_GROUP_2_SRC
   - application: APPLICATION_1
     dst_address_group: ADDRESS_GROUP_1_DST
     service_name: APPLICATION_1_SVC
