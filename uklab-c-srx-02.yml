@@ -6,6 +6,13 @@ policy_objects:
   - name: ADDRESS_GROUP_1_DST
     subnets:
     - 172.169.1.0/24
+  - name: EXCEL_SRC
+    subnets:
+    - 172.17.1.0/24
+    - 172.17.2.0/24
+  - name: EXCEL_DST
+    subnets:
+    - 192.168.1.1
   applications:
   - components:
     - ports:
@@ -14,8 +21,19 @@ policy_objects:
       - '2110'
       protocol: tcp
     name: APPLICATION_1
+  - components:
+    - ports:
+      - '666'
+      - '667'
+      - '668'
+      protocol: TCP
+    name: EXCEL
   policy_map:
   - application: APPLICATION_1
     dst_address_group: ADDRESS_GROUP_1_DST
     service_name: APPLICATION_1_SVC
     src_address_group: ADDRESS_GROUP_1_SRC
+  - application: EXCEL
+    dst_address_group: EXCEL_DST
+    service_name: EXCEL
+    src_address_group: EXCEL_SRC
